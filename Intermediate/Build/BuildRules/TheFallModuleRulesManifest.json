@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Unreal Projects\\TheFall\\TheFall\\Source\\TheFall\\TheFall.Build.cs",
+		"D:\\Unreal Projects\\TheFall\\TheFall\\Source\\TheFall.Target.cs",
+		"D:\\Unreal Projects\\TheFall\\TheFall\\Source\\TheFallEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\TheFall.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TheFall.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\TheFallEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\TheFall">
+      <UniqueIdentifier>{2E968093-C217-326D-9324-C79DF44EBB18}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TheFall\TheFall.Build.cs">
+      <Filter>Source\TheFall</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\TheFall\TheFall.cpp">
+      <Filter>Source\TheFall</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TheFall\TheFall.h">
+      <Filter>Source\TheFall</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TheFall\TheFallGameMode.cpp">
+      <Filter>Source\TheFall</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TheFall\TheFallGameMode.h">
+      <Filter>Source\TheFall</Filter>
+    </ClInclude>
+    <Filter Include="Source\TheFall\Private">
+      <UniqueIdentifier>{9C27BF5A-9312-3ABB-BF9A-27F0152BDF3E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TheFall\Private\BaseClass">
+      <UniqueIdentifier>{13318EC7-3206-34D0-A51B-27275795AA8B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TheFall\Private\BaseClass\TFCharacter.cpp">
+      <Filter>Source\TheFall\Private\BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TheFall\Private\BaseClass\TFPlayerCharacter.cpp">
+      <Filter>Source\TheFall\Private\BaseClass</Filter>
+    </ClCompile>
+    <Filter Include="Source\TheFall\Private\Components">
+      <UniqueIdentifier>{BBB43F74-3A1C-320A-9F4B-2BFD4CB1C688}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TheFall\Private\Components\StatlineComponent.cpp">
+      <Filter>Source\TheFall\Private\Components</Filter>
+    </ClCompile>
+    <Filter Include="Source\TheFall\Public">
+      <UniqueIdentifier>{0658A34F-B0F2-3760-ABD1-33225F8A48AB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TheFall\Public\BaseClass">
+      <UniqueIdentifier>{6B682098-9921-327D-B17F-ECE5B8A66BC7}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TheFall\Public\BaseClass\TFCharacter.h">
+      <Filter>Source\TheFall\Public\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TheFall\Public\BaseClass\TFPlayerCharacter.h">
+      <Filter>Source\TheFall\Public\BaseClass</Filter>
+    </ClInclude>
+    <Filter Include="Source\TheFall\Public\Components">
+      <UniqueIdentifier>{EB02EE95-B44F-3364-9633-75F8312E2C12}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TheFall\Public\Components\StatlineComponent.h">
+      <Filter>Source\TheFall\Public\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
