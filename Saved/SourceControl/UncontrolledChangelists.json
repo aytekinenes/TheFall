@@ -6,7 +6,9 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"D:/Unreal Projects/TheFall/TheFall/Content/ThirdPerson/UI/DEV_BASIC_HUD.uasset",
-				"D:/Unreal Projects/TheFall/TheFall/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset"
+				"D:/Unreal Projects/TheFall/TheFall/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
+				"D:/Unreal Projects/TheFall/TheFall/Content/ThirdPerson/Input/Actions/IA_Sprint.uasset",
+				"D:/Unreal Projects/TheFall/TheFall/Content/ThirdPerson/Input/IMC_Default.uasset"
 			]
 		}
 	]

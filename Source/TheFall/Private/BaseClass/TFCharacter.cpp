@@ -12,6 +12,7 @@ ATFCharacter::ATFCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Statline = CreateDefaultSubobject<UStatlineComponent>(TEXT("Statline"));
+	Statline->SetMovementCompReference(GetCharacterMovement());
 }
 
 // Called when the game starts or when spawned
@@ -19,6 +20,27 @@ void ATFCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
+}
+
+bool ATFCharacter::CanJump() const
+{
+	return Statline->CanJump();
+}
+
+void ATFCharacter::HasJumped()
+{
+	Statline->HasJumped();
+	ACharacter::Jump();
+}
+
+bool ATFCharacter::CanSprint() const
+{
+	return Statline->CanSprint();
+}
+
+void ATFCharacter::SetSprinting(const bool& bIsSprinting)
+{
+	Statline->SetSprinting(bIsSprinting);
 }
 
 // Called every frame
