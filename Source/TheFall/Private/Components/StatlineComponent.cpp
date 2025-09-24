@@ -2,13 +2,66 @@
 
 
 #include "Components/StatlineComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 void UStatlineComponent::TickStats(const float& DeltaTime)
 {
+	TickStamina(DeltaTime);
+	TickHunger(DeltaTime);
+	TickThirst(DeltaTime);
+	if (Thirst.GetCurrent() <= 0.0 || Hunger.GetCurrent() <= 0.0)
+	{
+		return;
+	}
 	Health.TickStat(DeltaTime);
+}
+
+void UStatlineComponent::TickStamina(const float& DeltaTime)
+{
+	if (CurrentStaminaExhuastion > 0.0)
+	{
+		CurrentStaminaExhuastion -= DeltaTime;
+		return;
+	}
+
+	if (bIsSprinting && isValidSprinting())
+	{
+		Stamina.TickStat( 0 - abs((DeltaTime * SprintCostMultiplier)));
+		if (Stamina.GetCurrent() <= 0.0)
+		{
+			SetSprinting(false);
+			CurrentStaminaExhuastion = SecondsForStaminaExhaustion;
+		}
+		return;
+	}
 	Stamina.TickStat(DeltaTime);
+}
+
+void UStatlineComponent::TickHunger(const float& DeltaTime)
+{
+	if(Hunger.GetCurrent() <= 0.0)
+	{
+		Health.Adjust(0 - abs(StarvingHealthDamagePerSecond * DeltaTime));
+		return;
+	}
+
 	Hunger.TickStat(DeltaTime);
+}
+
+void UStatlineComponent::TickThirst(const float& DeltaTime)
+{
+	if(Thirst.GetCurrent() <= 0.0)
+	{
+		Health.Adjust(0 - abs(DehydrationHealthDamagePerSecond * DeltaTime));
+		return;
+	}
 	Thirst.TickStat(DeltaTime);
+}
+
+
+bool UStatlineComponent::isValidSprinting()
+{
+	return OwningCharMovementComp->Velocity.Length() > WalkSpeed && !OwningCharMovementComp->IsFalling();
 }
 
 // Sets default values for this component's properties
@@ -26,8 +79,7 @@ UStatlineComponent::UStatlineComponent()
 void UStatlineComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
+	OwningCharMovementComp->MaxWalkSpeed = WalkSpeed;	
 	
 }
 
@@ -41,6 +93,11 @@ void UStatlineComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	{
 		TickStats(DeltaTime);
 	}
+}
+
+void UStatlineComponent::SetMovementCompReference(UCharacterMovementComponent* Comp)
+{
+	OwningCharMovementComp = Comp;
 }
 
 float UStatlineComponent::GetStatPercentile(const ECoreStat Stat) const
@@ -61,5 +118,42 @@ float UStatlineComponent::GetStatPercentile(const ECoreStat Stat) const
 	}
 
 	return -1;
+}
+
+bool UStatlineComponent::CanSprint() const
+{
+	return Stamina.GetCurrent() > 0.0;
+}
+
+void UStatlineComponent::SetSprinting(const bool& IsSprinting)
+{
+	bIsSprinting = IsSprinting;
+	if (bIsSneaking && !bIsSprinting)
+	{
+		return;
+	}
+	bIsSneaking = false;
+	OwningCharMovementComp->MaxWalkSpeed = IsSprinting ? SprintSpeed : WalkSpeed;
+}
+
+void UStatlineComponent::SetSneaking(const bool& IsSneaking)
+{
+	bIsSneaking = IsSneaking;
+	if (bIsSprinting & !bIsSneaking)
+	{
+		return;
+	}
+	bIsSprinting = false;
+	OwningCharMovementComp->MaxWalkSpeed = bIsSneaking ? SneakSpeed : WalkSpeed;
+}
+
+bool UStatlineComponent::CanJump()
+{
+	return Stamina.GetCurrent() >= JumpCost;
+}
+
+void UStatlineComponent::HasJumped()
+{
+	Stamina.Adjust(0 - JumpCost);
 }
 

@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UCharacterMovementComponent;
 enum class ECoreStat : uint8;
 #ifdef THEFALL_StatlineComponent_generated_h
 #error "StatlineComponent.generated.h already included, missing '#pragma once' in StatlineComponent.h"
@@ -22,11 +23,17 @@ enum class ECoreStat : uint8;
 
 template<> THEFALL_API UScriptStruct* StaticStruct<struct FCoreStat>();
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_70_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execGetStatPercentile);
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execHasJumped); \
+	DECLARE_FUNCTION(execCanJump); \
+	DECLARE_FUNCTION(execSetSneaking); \
+	DECLARE_FUNCTION(execSetSprinting); \
+	DECLARE_FUNCTION(execCanSprint); \
+	DECLARE_FUNCTION(execGetStatPercentile); \
+	DECLARE_FUNCTION(execSetMovementCompReference);
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_70_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUStatlineComponent(); \
 	friend struct Z_Construct_UClass_UStatlineComponent_Statics; \
@@ -35,7 +42,7 @@ public: \
 	DECLARE_SERIALIZER(UStatlineComponent)
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_70_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UStatlineComponent(UStatlineComponent&&); \
@@ -47,13 +54,13 @@ public: \
 	NO_API virtual ~UStatlineComponent();
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_67_PROLOG
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_70_GENERATED_BODY \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_73_PROLOG
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_70_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_70_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_70_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
