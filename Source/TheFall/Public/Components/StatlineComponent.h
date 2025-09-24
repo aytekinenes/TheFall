@@ -25,7 +25,7 @@ private:
 	float Current = 100;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	float Max = 100;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))// TODO: Set back to Visible AnyWhere
 	float PerSecondTick = 1;
 
 public:
@@ -83,26 +83,38 @@ private:
 	FCoreStat Health;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	FCoreStat Stamina;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	FCoreStat Hunger = FCoreStat(100,100, -0.125);
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	FCoreStat Thirst = FCoreStat(100, 100, -0.25);
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))// TODO: Set back to Visible AnyWhere
+	FCoreStat Hunger = FCoreStat(100,100, -2.125);
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true")) // TODO: Set back to Visible AnyWhere
+	FCoreStat Thirst = FCoreStat(100, 100, -2.25);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	bool bIsSprinting = false;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	float SprintCostMultiplier = 2;
+	bool bIsSneaking = false;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	float JumpCost= 10;
+	float SprintCostMultiplier = 2;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	float WalkSpeed = 125;
-
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	float SprintSpeed = 450;
-
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	float SneakSpeed = 75;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	float JumpCost= 10;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	float SecondsForStaminaExhaustion = 5;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	float CurrentStaminaExhuastion = 0;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	float StarvingHealthDamagePerSecond = 1;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	float DehydrationHealthDamagePerSecond = 1;
 
 	void TickStats(const float& DeltaTime);
 	void TickStamina(const float& DeltaTime);
+	void TickHunger(const float& DeltaTime);
+	void TickThirst(const float& DeltaTime);
 	bool isValidSprinting();
 
 protected:
@@ -127,6 +139,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetSprinting(const bool& IsSprinting);
+
+	UFUNCTION(BlueprintCallable)
+	void SetSneaking(const bool& IsSneaking);
 
 	UFUNCTION(BlueprintCallable)
 	bool CanJump();

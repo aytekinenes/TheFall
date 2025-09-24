@@ -43,6 +43,11 @@ void ATFCharacter::SetSprinting(const bool& bIsSprinting)
 	Statline->SetSprinting(bIsSprinting);
 }
 
+void ATFCharacter::SetSneaking(const bool& IsSneaking)
+{
+	Statline->SetSneaking(IsSneaking);
+}
+
 // Called every frame
 void ATFCharacter::Tick(float DeltaTime)
 {

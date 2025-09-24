@@ -26,6 +26,7 @@ template<> THEFALL_API UScriptStruct* StaticStruct<struct FCoreStat>();
 #define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execHasJumped); \
 	DECLARE_FUNCTION(execCanJump); \
+	DECLARE_FUNCTION(execSetSneaking); \
 	DECLARE_FUNCTION(execSetSprinting); \
 	DECLARE_FUNCTION(execCanSprint); \
 	DECLARE_FUNCTION(execGetStatPercentile); \

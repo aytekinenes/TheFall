@@ -6,27 +6,58 @@
 
 void UStatlineComponent::TickStats(const float& DeltaTime)
 {
-	Health.TickStat(DeltaTime);
 	TickStamina(DeltaTime);
-	Hunger.TickStat(DeltaTime);
-	Thirst.TickStat(DeltaTime);
+	TickHunger(DeltaTime);
+	TickThirst(DeltaTime);
+	if (Thirst.GetCurrent() <= 0.0 || Hunger.GetCurrent() <= 0.0)
+	{
+		return;
+	}
+	Health.TickStat(DeltaTime);
 }
 
 void UStatlineComponent::TickStamina(const float& DeltaTime)
 {
-
-	if (bIsSprinting && isValidSprinting())
+	if (CurrentStaminaExhuastion > 0.0)
 	{
-		Stamina.TickStat( 0 - (DeltaTime * SprintCostMultiplier));
-		if (Stamina.GetCurrent() <= 0.0)
-		{
-			SetSprinting(false);
-		}
+		CurrentStaminaExhuastion -= DeltaTime;
 		return;
 	}
 
+	if (bIsSprinting && isValidSprinting())
+	{
+		Stamina.TickStat( 0 - abs((DeltaTime * SprintCostMultiplier)));
+		if (Stamina.GetCurrent() <= 0.0)
+		{
+			SetSprinting(false);
+			CurrentStaminaExhuastion = SecondsForStaminaExhaustion;
+		}
+		return;
+	}
 	Stamina.TickStat(DeltaTime);
 }
+
+void UStatlineComponent::TickHunger(const float& DeltaTime)
+{
+	if(Hunger.GetCurrent() <= 0.0)
+	{
+		Health.Adjust(0 - abs(StarvingHealthDamagePerSecond * DeltaTime));
+		return;
+	}
+
+	Hunger.TickStat(DeltaTime);
+}
+
+void UStatlineComponent::TickThirst(const float& DeltaTime)
+{
+	if(Thirst.GetCurrent() <= 0.0)
+	{
+		Health.Adjust(0 - abs(DehydrationHealthDamagePerSecond * DeltaTime));
+		return;
+	}
+	Thirst.TickStat(DeltaTime);
+}
+
 
 bool UStatlineComponent::isValidSprinting()
 {
@@ -97,7 +128,23 @@ bool UStatlineComponent::CanSprint() const
 void UStatlineComponent::SetSprinting(const bool& IsSprinting)
 {
 	bIsSprinting = IsSprinting;
+	if (bIsSneaking && !bIsSprinting)
+	{
+		return;
+	}
+	bIsSneaking = false;
 	OwningCharMovementComp->MaxWalkSpeed = IsSprinting ? SprintSpeed : WalkSpeed;
+}
+
+void UStatlineComponent::SetSneaking(const bool& IsSneaking)
+{
+	bIsSneaking = IsSneaking;
+	if (bIsSprinting & !bIsSneaking)
+	{
+		return;
+	}
+	bIsSprinting = false;
+	OwningCharMovementComp->MaxWalkSpeed = bIsSneaking ? SneakSpeed : WalkSpeed;
 }
 
 bool UStatlineComponent::CanJump()
