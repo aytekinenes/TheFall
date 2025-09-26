@@ -11,6 +11,8 @@
     <None Include="..\..\Source\TheFallEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -66,6 +68,21 @@
     <ClCompile Include="..\..\Source\TheFall\Private\Components\StatlineComponent.cpp">
       <Filter>Source\TheFall\Private\Components</Filter>
     </ClCompile>
+    <Filter Include="Source\TheFall\Private\Game">
+      <UniqueIdentifier>{B8E79360-5B6E-363A-974D-2B4BC54C47C7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TheFall\Private\Game\TFGameInstance.cpp">
+      <Filter>Source\TheFall\Private\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TheFall\Private\Game\TFSaveGame.cpp">
+      <Filter>Source\TheFall\Private\Game</Filter>
+    </ClCompile>
+    <Filter Include="Source\TheFall\Private\Interface">
+      <UniqueIdentifier>{BB463162-3AF8-3A16-86D4-8CDFC8BEEF98}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TheFall\Private\Interface\SaveActorInterface.cpp">
+      <Filter>Source\TheFall\Private\Interface</Filter>
+    </ClCompile>
     <Filter Include="Source\TheFall\Public">
       <UniqueIdentifier>{0658A34F-B0F2-3760-ABD1-33225F8A48AB}</UniqueIdentifier>
     </Filter>
@@ -83,6 +100,21 @@
     </Filter>
     <ClInclude Include="..\..\Source\TheFall\Public\Components\StatlineComponent.h">
       <Filter>Source\TheFall\Public\Components</Filter>
+    </ClInclude>
+    <Filter Include="Source\TheFall\Public\Game">
+      <UniqueIdentifier>{918CACC8-0557-3051-B7C3-EC426E1C0E36}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TheFall\Public\Game\TFGameInstance.h">
+      <Filter>Source\TheFall\Public\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TheFall\Public\Game\TFSaveGame.h">
+      <Filter>Source\TheFall\Public\Game</Filter>
+    </ClInclude>
+    <Filter Include="Source\TheFall\Public\Interface">
+      <UniqueIdentifier>{8F0AAD78-4C5A-3116-9815-A33190FA8E72}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TheFall\Public\Interface\SaveActorInterface.h">
+      <Filter>Source\TheFall\Public\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
