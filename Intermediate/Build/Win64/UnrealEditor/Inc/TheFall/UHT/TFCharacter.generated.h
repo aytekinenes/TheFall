@@ -14,16 +14,17 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define THEFALL_TFCharacter_generated_h
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATFCharacter(); \
 	friend struct Z_Construct_UClass_ATFCharacter_Statics; \
 public: \
 	DECLARE_CLASS(ATFCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TheFall"), NO_API) \
-	DECLARE_SERIALIZER(ATFCharacter)
+	DECLARE_SERIALIZER(ATFCharacter) \
+	virtual UObject* _getUObject() const override { return const_cast<ATFCharacter*>(this); }
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ATFCharacter(ATFCharacter&&); \
@@ -35,12 +36,12 @@ public: \
 	NO_API virtual ~ATFCharacter();
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_10_PROLOG
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_13_GENERATED_BODY \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_12_PROLOG
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

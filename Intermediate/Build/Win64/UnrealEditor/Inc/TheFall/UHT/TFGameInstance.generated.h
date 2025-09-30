@@ -17,6 +17,8 @@ struct FSaveActorData;
 #define THEFALL_TFGameInstance_generated_h
 
 #define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execDEV_LoadGame); \
+	DECLARE_FUNCTION(execDEV_SaveGame); \
 	DECLARE_FUNCTION(execGetActorData); \
 	DECLARE_FUNCTION(execAddActorData);
 

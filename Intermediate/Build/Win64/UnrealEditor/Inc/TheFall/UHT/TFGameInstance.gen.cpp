@@ -70,6 +70,64 @@ DEFINE_FUNCTION(UTFGameInstance::execAddActorData)
 }
 // End Class UTFGameInstance Function AddActorData
 
+// Begin Class UTFGameInstance Function DEV_LoadGame
+struct Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UTFGameInstance, nullptr, "DEV_LoadGame", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame_Statics::Function_MetaDataParams), Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UTFGameInstance::execDEV_LoadGame)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->DEV_LoadGame();
+	P_NATIVE_END;
+}
+// End Class UTFGameInstance Function DEV_LoadGame
+
+// Begin Class UTFGameInstance Function DEV_SaveGame
+struct Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UTFGameInstance, nullptr, "DEV_SaveGame", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame_Statics::Function_MetaDataParams), Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UTFGameInstance::execDEV_SaveGame)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->DEV_SaveGame();
+	P_NATIVE_END;
+}
+// End Class UTFGameInstance Function DEV_SaveGame
+
 // Begin Class UTFGameInstance Function GetActorData
 struct Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics
 {
@@ -125,6 +183,8 @@ void UTFGameInstance::StaticRegisterNativesUTFGameInstance()
 	UClass* Class = UTFGameInstance::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AddActorData", &UTFGameInstance::execAddActorData },
+		{ "DEV_LoadGame", &UTFGameInstance::execDEV_LoadGame },
+		{ "DEV_SaveGame", &UTFGameInstance::execDEV_SaveGame },
 		{ "GetActorData", &UTFGameInstance::execGetActorData },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -153,6 +213,8 @@ struct Z_Construct_UClass_UTFGameInstance_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UTFGameInstance_AddActorData, "AddActorData" }, // 412303186
+		{ &Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame, "DEV_LoadGame" }, // 4159774474
+		{ &Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame, "DEV_SaveGame" }, // 1317523253
 		{ &Z_Construct_UFunction_UTFGameInstance_GetActorData, "GetActorData" }, // 314900923
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -206,10 +268,10 @@ UTFGameInstance::~UTFGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UTFGameInstance, UTFGameInstance::StaticClass, TEXT("UTFGameInstance"), &Z_Registration_Info_UClass_UTFGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFGameInstance), 664554551U) },
+		{ Z_Construct_UClass_UTFGameInstance, UTFGameInstance::StaticClass, TEXT("UTFGameInstance"), &Z_Registration_Info_UClass_UTFGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFGameInstance), 2267910951U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_1715248231(TEXT("/Script/TheFall"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_158636700(TEXT("/Script/TheFall"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

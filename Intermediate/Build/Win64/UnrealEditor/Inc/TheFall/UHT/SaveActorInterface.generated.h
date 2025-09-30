@@ -9,6 +9,8 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FGuid;
+struct FSaveActorData;
 #ifdef THEFALL_SaveActorInterface_generated_h
 #error "SaveActorInterface.generated.h already included, missing '#pragma once' in SaveActorInterface.h"
 #endif
@@ -21,6 +23,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 template<> THEFALL_API UScriptStruct* StaticStruct<struct FSaveActorData>();
 
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetSaveData); \
+	DECLARE_FUNCTION(execGetActorSaveID);
+
+
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_CALLBACK_WRAPPERS
 #define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	THEFALL_API USaveActorInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
@@ -58,6 +66,8 @@ protected: \
 public: \
 	typedef USaveActorInterface UClassType; \
 	typedef ISaveActorInterface ThisClass; \
+	static FGuid Execute_GetActorSaveID(UObject* O); \
+	static FSaveActorData Execute_GetSaveData(UObject* O); \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
@@ -65,6 +75,8 @@ public: \
 #define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_40_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_CALLBACK_WRAPPERS \
 	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_INCLASS_IINTERFACE_NO_PURE_DECLS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
