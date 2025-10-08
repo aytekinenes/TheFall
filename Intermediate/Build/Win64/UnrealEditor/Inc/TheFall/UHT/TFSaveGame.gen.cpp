@@ -53,9 +53,9 @@ struct Z_Construct_UClass_UTFSaveGame_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTFSaveGame_Statics::NewProp_SaveableActorData_ValueProp = { "SaveableActorData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(0, nullptr) }; // 733657510
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTFSaveGame_Statics::NewProp_SaveableActorData_ValueProp = { "SaveableActorData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(0, nullptr) }; // 279375981
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTFSaveGame_Statics::NewProp_SaveableActorData_Key_KeyProp = { "SaveableActorData_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UTFSaveGame_Statics::NewProp_SaveableActorData = { "SaveableActorData", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFSaveGame, SaveableActorData), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SaveableActorData_MetaData), NewProp_SaveableActorData_MetaData) }; // 733657510
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UTFSaveGame_Statics::NewProp_SaveableActorData = { "SaveableActorData", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFSaveGame, SaveableActorData), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SaveableActorData_MetaData), NewProp_SaveableActorData_MetaData) }; // 279375981
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UTFSaveGame_Statics::NewProp_CurrentlyLoadedLevel = { "CurrentlyLoadedLevel", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFSaveGame, CurrentlyLoadedLevel), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentlyLoadedLevel_MetaData), NewProp_CurrentlyLoadedLevel_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UTFSaveGame_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFSaveGame_Statics::NewProp_SaveableActorData_ValueProp,
@@ -105,10 +105,10 @@ UTFSaveGame::~UTFSaveGame() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFSaveGame_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UTFSaveGame, UTFSaveGame::StaticClass, TEXT("UTFSaveGame"), &Z_Registration_Info_UClass_UTFSaveGame, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFSaveGame), 558744100U) },
+		{ Z_Construct_UClass_UTFSaveGame, UTFSaveGame::StaticClass, TEXT("UTFSaveGame"), &Z_Registration_Info_UClass_UTFSaveGame, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFSaveGame), 2435476867U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFSaveGame_h_1479209092(TEXT("/Script/TheFall"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFSaveGame_h_3228809868(TEXT("/Script/TheFall"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFSaveGame_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFSaveGame_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

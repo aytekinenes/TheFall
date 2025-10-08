@@ -42,7 +42,7 @@ struct Z_Construct_UFunction_UTFGameInstance_AddActorData_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UTFGameInstance_AddActorData_Statics::NewProp_ActorID = { "ActorID", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TFGameInstance_eventAddActorData_Parms, ActorID), Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ActorID_MetaData), NewProp_ActorID_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UTFGameInstance_AddActorData_Statics::NewProp_ActorData = { "ActorData", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TFGameInstance_eventAddActorData_Parms, ActorData), Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(0, nullptr) }; // 733657510
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UTFGameInstance_AddActorData_Statics::NewProp_ActorData = { "ActorData", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TFGameInstance_eventAddActorData_Parms, ActorData), Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(0, nullptr) }; // 279375981
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UTFGameInstance_AddActorData_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UTFGameInstance_AddActorData_Statics::NewProp_ActorID,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UTFGameInstance_AddActorData_Statics::NewProp_ActorData,
@@ -150,7 +150,7 @@ struct Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics::NewProp_ActorID = { "ActorID", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TFGameInstance_eventGetActorData_Parms, ActorID), Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ActorID_MetaData), NewProp_ActorID_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TFGameInstance_eventGetActorData_Parms, ReturnValue), Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(0, nullptr) }; // 733657510
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(TFGameInstance_eventGetActorData_Parms, ReturnValue), Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(0, nullptr) }; // 279375981
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics::NewProp_ActorID,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UTFGameInstance_GetActorData_Statics::NewProp_ReturnValue,
@@ -212,10 +212,10 @@ struct Z_Construct_UClass_UTFGameInstance_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UTFGameInstance_AddActorData, "AddActorData" }, // 412303186
+		{ &Z_Construct_UFunction_UTFGameInstance_AddActorData, "AddActorData" }, // 200231433
 		{ &Z_Construct_UFunction_UTFGameInstance_DEV_LoadGame, "DEV_LoadGame" }, // 4159774474
 		{ &Z_Construct_UFunction_UTFGameInstance_DEV_SaveGame, "DEV_SaveGame" }, // 1317523253
-		{ &Z_Construct_UFunction_UTFGameInstance_GetActorData, "GetActorData" }, // 314900923
+		{ &Z_Construct_UFunction_UTFGameInstance_GetActorData, "GetActorData" }, // 1476513325
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -268,10 +268,10 @@ UTFGameInstance::~UTFGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UTFGameInstance, UTFGameInstance::StaticClass, TEXT("UTFGameInstance"), &Z_Registration_Info_UClass_UTFGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFGameInstance), 2267910951U) },
+		{ Z_Construct_UClass_UTFGameInstance, UTFGameInstance::StaticClass, TEXT("UTFGameInstance"), &Z_Registration_Info_UClass_UTFGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFGameInstance), 448222295U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_158636700(TEXT("/Script/TheFall"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_3078651781(TEXT("/Script/TheFall"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

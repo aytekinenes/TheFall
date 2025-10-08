@@ -11,25 +11,37 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct FGuid;
 struct FSaveActorData;
+struct FSaveComponentData;
 #ifdef THEFALL_SaveActorInterface_generated_h
 #error "SaveActorInterface.generated.h already included, missing '#pragma once' in SaveActorInterface.h"
 #endif
 #define THEFALL_SaveActorInterface_generated_h
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_14_GENERATED_BODY \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_13_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FSaveComponentData_Statics; \
+	THEFALL_API static class UScriptStruct* StaticStruct();
+
+
+template<> THEFALL_API UScriptStruct* StaticStruct<struct FSaveComponentData>();
+
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_34_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSaveActorData_Statics; \
 	THEFALL_API static class UScriptStruct* StaticStruct();
 
 
 template<> THEFALL_API UScriptStruct* StaticStruct<struct FSaveActorData>();
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void SetComponentSaveData_Implementation(FSaveComponentData Data) {}; \
+	virtual FSaveComponentData GetComponentSaveData_Implementation() { return FSaveComponentData(); }; \
+	DECLARE_FUNCTION(execSetComponentSaveData); \
+	DECLARE_FUNCTION(execGetComponentSaveData); \
 	DECLARE_FUNCTION(execGetSaveData); \
 	DECLARE_FUNCTION(execGetActorSaveID);
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_CALLBACK_WRAPPERS
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_CALLBACK_WRAPPERS
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	THEFALL_API USaveActorInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -43,7 +55,7 @@ public: \
 	THEFALL_API virtual ~USaveActorInterface();
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_GENERATED_UINTERFACE_BODY() \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_GENERATED_UINTERFACE_BODY() \
 private: \
 	static void StaticRegisterNativesUSaveActorInterface(); \
 	friend struct Z_Construct_UClass_USaveActorInterface_Statics; \
@@ -52,32 +64,34 @@ public: \
 	DECLARE_SERIALIZER(USaveActorInterface)
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_GENERATED_BODY \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_GENERATED_UINTERFACE_BODY() \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_GENERATED_UINTERFACE_BODY() \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_ENHANCED_CONSTRUCTORS \
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_INCLASS_IINTERFACE_NO_PURE_DECLS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_INCLASS_IINTERFACE_NO_PURE_DECLS \
 protected: \
 	virtual ~ISaveActorInterface() {} \
 public: \
 	typedef USaveActorInterface UClassType; \
 	typedef ISaveActorInterface ThisClass; \
 	static FGuid Execute_GetActorSaveID(UObject* O); \
+	static FSaveComponentData Execute_GetComponentSaveData(UObject* O); \
 	static FSaveActorData Execute_GetSaveData(UObject* O); \
+	static void Execute_SetComponentSaveData(UObject* O, FSaveComponentData Data); \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_29_PROLOG
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_40_GENERATED_BODY \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_51_PROLOG
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_62_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_CALLBACK_WRAPPERS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_32_INCLASS_IINTERFACE_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_CALLBACK_WRAPPERS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_INCLASS_IINTERFACE_NO_PURE_DECLS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -16,14 +16,14 @@ enum class ECoreStat : uint8;
 #endif
 #define THEFALL_StatlineComponent_generated_h
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_21_GENERATED_BODY \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_22_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FCoreStat_Statics; \
 	THEFALL_API static class UScriptStruct* StaticStruct();
 
 
 template<> THEFALL_API UScriptStruct* StaticStruct<struct FCoreStat>();
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_96_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execHasJumped); \
 	DECLARE_FUNCTION(execCanJump); \
 	DECLARE_FUNCTION(execSetSneaking); \
@@ -33,16 +33,17 @@ template<> THEFALL_API UScriptStruct* StaticStruct<struct FCoreStat>();
 	DECLARE_FUNCTION(execSetMovementCompReference);
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_96_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUStatlineComponent(); \
 	friend struct Z_Construct_UClass_UStatlineComponent_Statics; \
 public: \
 	DECLARE_CLASS(UStatlineComponent, UActorComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TheFall"), NO_API) \
-	DECLARE_SERIALIZER(UStatlineComponent)
+	DECLARE_SERIALIZER(UStatlineComponent) \
+	virtual UObject* _getUObject() const override { return const_cast<UStatlineComponent*>(this); }
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_96_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UStatlineComponent(UStatlineComponent&&); \
@@ -54,13 +55,13 @@ public: \
 	NO_API virtual ~UStatlineComponent();
 
 
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_73_PROLOG
-#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_GENERATED_BODY \
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_93_PROLOG
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_96_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_76_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_96_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_96_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_96_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

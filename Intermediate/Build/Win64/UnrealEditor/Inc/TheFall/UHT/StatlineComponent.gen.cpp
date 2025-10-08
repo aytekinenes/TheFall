@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeStatlineComponent() {}
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 ENGINE_API UClass* Z_Construct_UClass_UCharacterMovementComponent_NoRegister();
+THEFALL_API UClass* Z_Construct_UClass_USaveActorInterface_NoRegister();
 THEFALL_API UClass* Z_Construct_UClass_UStatlineComponent();
 THEFALL_API UClass* Z_Construct_UClass_UStatlineComponent_NoRegister();
 THEFALL_API UEnum* Z_Construct_UEnum_TheFall_ECoreStat();
@@ -628,6 +629,7 @@ struct Z_Construct_UClass_UStatlineComponent_Statics
 		{ &Z_Construct_UFunction_UStatlineComponent_SetSprinting, "SetSprinting" }, // 3010804755
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
+	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UStatlineComponent>::IsAbstract,
 	};
@@ -679,6 +681,9 @@ UObject* (*const Z_Construct_UClass_UStatlineComponent_Statics::DependentSinglet
 	(UObject* (*)())Z_Construct_UPackage__Script_TheFall,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UStatlineComponent_Statics::DependentSingletons) < 16);
+const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_UStatlineComponent_Statics::InterfaceParams[] = {
+	{ Z_Construct_UClass_USaveActorInterface_NoRegister, (int32)VTABLE_OFFSET(UStatlineComponent, ISaveActorInterface), false },  // 3484272103
+};
 const UECodeGen_Private::FClassParams Z_Construct_UClass_UStatlineComponent_Statics::ClassParams = {
 	&UStatlineComponent::StaticClass,
 	"Engine",
@@ -686,11 +691,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_UStatlineComponent_Stat
 	DependentSingletons,
 	FuncInfo,
 	Z_Construct_UClass_UStatlineComponent_Statics::PropPointers,
-	nullptr,
+	InterfaceParams,
 	UE_ARRAY_COUNT(DependentSingletons),
 	UE_ARRAY_COUNT(FuncInfo),
 	UE_ARRAY_COUNT(Z_Construct_UClass_UStatlineComponent_Statics::PropPointers),
-	0,
+	UE_ARRAY_COUNT(InterfaceParams),
 	0x00B000A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UStatlineComponent_Statics::Class_MetaDataParams), Z_Construct_UClass_UStatlineComponent_Statics::Class_MetaDataParams)
 };
@@ -720,10 +725,10 @@ struct Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_
 		{ FCoreStat::StaticStruct, Z_Construct_UScriptStruct_FCoreStat_Statics::NewStructOps, TEXT("CoreStat"), &Z_Registration_Info_UScriptStruct_CoreStat, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCoreStat), 3053569280U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UStatlineComponent, UStatlineComponent::StaticClass, TEXT("UStatlineComponent"), &Z_Registration_Info_UClass_UStatlineComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStatlineComponent), 2183539982U) },
+		{ Z_Construct_UClass_UStatlineComponent, UStatlineComponent::StaticClass, TEXT("UStatlineComponent"), &Z_Registration_Info_UClass_UStatlineComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStatlineComponent), 563637521U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_2419555847(TEXT("/Script/TheFall"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_1428337125(TEXT("/Script/TheFall"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Components_StatlineComponent_h_Statics::EnumInfo));
