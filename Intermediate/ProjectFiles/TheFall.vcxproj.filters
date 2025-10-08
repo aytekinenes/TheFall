@@ -53,6 +53,9 @@
     <Filter Include="Source\TheFall\Private">
       <UniqueIdentifier>{9C27BF5A-9312-3ABB-BF9A-27F0152BDF3E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TheFall\Private\TFUtils.cpp">
+      <Filter>Source\TheFall\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\TheFall\Private\BaseClass">
       <UniqueIdentifier>{13318EC7-3206-34D0-A51B-27275795AA8B}</UniqueIdentifier>
     </Filter>
@@ -86,6 +89,9 @@
     <Filter Include="Source\TheFall\Public">
       <UniqueIdentifier>{0658A34F-B0F2-3760-ABD1-33225F8A48AB}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\TheFall\Public\TFUtils.h">
+      <Filter>Source\TheFall\Public</Filter>
+    </ClInclude>
     <Filter Include="Source\TheFall\Public\BaseClass">
       <UniqueIdentifier>{6B682098-9921-327D-B17F-ECE5B8A66BC7}</UniqueIdentifier>
     </Filter>
