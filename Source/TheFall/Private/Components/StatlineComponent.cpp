@@ -158,7 +158,7 @@ void UStatlineComponent::HasJumped()
 	Stamina.Adjust(0 - JumpCost);
 }
 
-FSaveComponentData UStatlineComponent::GetComponentSaveData_Implemantation()
+FSaveComponentData UStatlineComponent::GetComponentSaveData_Implementation()
 {
 	FSaveComponentData Ret;
 
@@ -167,12 +167,12 @@ FSaveComponentData UStatlineComponent::GetComponentSaveData_Implemantation()
 	Ret.RawData.Add(Stamina.GetSaveString()); //1
 	Ret.RawData.Add(Hunger.GetSaveString()); //2
 	Ret.RawData.Add(Thirst.GetSaveString()); //3
-	// Any addtional raw data adds here, need yo be included in the SetComponentSaveData_Implemantation function
+	// Any addtional raw data adds here, need yo be included in the SetComponentSaveData_Implementation function
 
 	return Ret;
 }
 
-void UStatlineComponent::SetComponentSaveData_Implemantation(FSaveComponentData Data)
+void UStatlineComponent::SetComponentSaveData_Implementation(FSaveComponentData Data)
 {
 	TArray<FString> Parts;
 	for (int i = 0; i < Data.RawData.Num(); i++)

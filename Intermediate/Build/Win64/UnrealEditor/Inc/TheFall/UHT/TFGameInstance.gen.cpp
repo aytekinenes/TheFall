@@ -204,11 +204,29 @@ struct Z_Construct_UClass_UTFGameInstance_Statics
 		{ "IncludePath", "Game/TFGameInstance.h" },
 		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SaveableActorData_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SaveGameObject_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SaveGameName_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentlyLoadedLevel_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerData_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Game/TFGameInstance.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_SaveableActorData_ValueProp;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_SaveableActorData_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_SaveableActorData;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SaveGameObject;
+	static const UECodeGen_Private::FStrPropertyParams NewProp_SaveGameName;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_CurrentlyLoadedLevel;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_PlayerData;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -223,9 +241,21 @@ struct Z_Construct_UClass_UTFGameInstance_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveableActorData_ValueProp = { "SaveableActorData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(0, nullptr) }; // 279375981
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveableActorData_Key_KeyProp = { "SaveableActorData_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveableActorData = { "SaveableActorData", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFGameInstance, SaveableActorData), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SaveableActorData_MetaData), NewProp_SaveableActorData_MetaData) }; // 279375981
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveGameObject = { "SaveGameObject", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFGameInstance, SaveGameObject), Z_Construct_UClass_UTFSaveGame_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SaveGameObject_MetaData), NewProp_SaveGameObject_MetaData) };
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveGameName = { "SaveGameName", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFGameInstance, SaveGameName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SaveGameName_MetaData), NewProp_SaveGameName_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UTFGameInstance_Statics::NewProp_CurrentlyLoadedLevel = { "CurrentlyLoadedLevel", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFGameInstance, CurrentlyLoadedLevel), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentlyLoadedLevel_MetaData), NewProp_CurrentlyLoadedLevel_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UTFGameInstance_Statics::NewProp_PlayerData = { "PlayerData", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTFGameInstance, PlayerData), Z_Construct_UScriptStruct_FSaveActorData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerData_MetaData), NewProp_PlayerData_MetaData) }; // 279375981
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UTFGameInstance_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveableActorData_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveableActorData_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveableActorData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveGameObject,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFGameInstance_Statics::NewProp_SaveGameName,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFGameInstance_Statics::NewProp_CurrentlyLoadedLevel,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTFGameInstance_Statics::NewProp_PlayerData,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UTFGameInstance_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UTFGameInstance_Statics::DependentSingletons[])() = {
@@ -268,10 +298,10 @@ UTFGameInstance::~UTFGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UTFGameInstance, UTFGameInstance::StaticClass, TEXT("UTFGameInstance"), &Z_Registration_Info_UClass_UTFGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFGameInstance), 448222295U) },
+		{ Z_Construct_UClass_UTFGameInstance, UTFGameInstance::StaticClass, TEXT("UTFGameInstance"), &Z_Registration_Info_UClass_UTFGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTFGameInstance), 4024651103U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_3078651781(TEXT("/Script/TheFall"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_4224711335(TEXT("/Script/TheFall"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Game_TFGameInstance_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

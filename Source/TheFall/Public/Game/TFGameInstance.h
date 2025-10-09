@@ -15,12 +15,16 @@ class THEFALL_API UTFGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 private:
-	
+	UPROPERTY()
 	TMap<FGuid, FSaveActorData> SaveableActorData;
 	UPROPERTY()
 	class UTFSaveGame* SaveGameObject = nullptr;
+	UPROPERTY()
 	FString SaveGameName = TEXT("DEFAULT");
+	UPROPERTY()
 	FName CurrentlyLoadedLevel = "NONE";
+	UPROPERTY()
+	FSaveActorData PlayerData;
 
 
 	UTFGameInstance();
@@ -28,6 +32,10 @@ private:
 	void CreateSaveSlot();
 	void GatherActorData();
 	void LoadGame();
+
+	void GatherPlayerData();
+	void SetPlayerData();
+
 public:
 	UFUNCTION(BlueprintCallable)
 	void AddActorData(const FGuid& ActorID, FSaveActorData ActorData);
