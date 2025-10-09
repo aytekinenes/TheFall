@@ -12,17 +12,21 @@ FGuid ISaveActorInterface::GetActorSaveID_Implementation()
     return Ret;
 }
 
+void ISaveActorInterface::SetActorGUID_Implementation(const FGuid& NewGuid)
+{
+}
+
 FSaveActorData ISaveActorInterface::GetSaveData_Implementation()
 {
     return FSaveActorData();
 }
 
-FSaveComponentData ISaveActorInterface::GetComponentSaveData_Implemantation()
+FSaveComponentData ISaveActorInterface::GetComponentSaveData_Implementation()
 {
     return FSaveComponentData();
 }
 
-void ISaveActorInterface::SetComponentSaveData_Implemantation(FSaveComponentData Data)
+void ISaveActorInterface::SetComponentSaveData_Implementation(FSaveComponentData Data)
 {
 }
 

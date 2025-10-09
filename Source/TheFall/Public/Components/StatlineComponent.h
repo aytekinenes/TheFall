@@ -169,8 +169,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void HasJumped();
 
-	virtual FSaveComponentData GetComponentSaveData_Implemantation();
-	void SetComponentSaveData_Implemantation(FSaveComponentData Data);
+	virtual FSaveComponentData GetComponentSaveData_Implementation();
+	void SetComponentSaveData_Implementation(FSaveComponentData Data);
 
 
 };

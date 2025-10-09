@@ -95,6 +95,8 @@ void ATFPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 void ATFPlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	//ATFCharacter::BeginPlay();
+	SaveActorID.Invalidate();
 }
 
 ATFPlayerCharacter::ATFPlayerCharacter()

@@ -23,3 +23,13 @@ FName UTFSaveGame::GetCurrentData()
 {
 	return CurrentlyLoadedLevel;
 }
+
+void UTFSaveGame::SetPlayerData(FSaveActorData Data)
+{
+	PlayerData = Data;
+}
+
+FSaveActorData UTFSaveGame::GetPlayerData()
+{
+	return PlayerData;
+}

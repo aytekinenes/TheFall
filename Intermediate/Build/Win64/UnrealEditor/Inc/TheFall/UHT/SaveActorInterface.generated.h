@@ -32,11 +32,10 @@ template<> THEFALL_API UScriptStruct* StaticStruct<struct FSaveComponentData>();
 template<> THEFALL_API UScriptStruct* StaticStruct<struct FSaveActorData>();
 
 #define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_54_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void SetComponentSaveData_Implementation(FSaveComponentData Data) {}; \
-	virtual FSaveComponentData GetComponentSaveData_Implementation() { return FSaveComponentData(); }; \
 	DECLARE_FUNCTION(execSetComponentSaveData); \
 	DECLARE_FUNCTION(execGetComponentSaveData); \
 	DECLARE_FUNCTION(execGetSaveData); \
+	DECLARE_FUNCTION(execSetActorGUID); \
 	DECLARE_FUNCTION(execGetActorSaveID);
 
 
@@ -81,6 +80,7 @@ public: \
 	static FGuid Execute_GetActorSaveID(UObject* O); \
 	static FSaveComponentData Execute_GetComponentSaveData(UObject* O); \
 	static FSaveActorData Execute_GetSaveData(UObject* O); \
+	static void Execute_SetActorGUID(UObject* O, FGuid const& NewGuid); \
 	static void Execute_SetComponentSaveData(UObject* O, FSaveComponentData Data); \
 	virtual UObject* _getUObject() const { return nullptr; }
 

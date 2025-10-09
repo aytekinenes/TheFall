@@ -397,6 +397,72 @@ DEFINE_FUNCTION(ISaveActorInterface::execGetSaveData)
 }
 // End Interface USaveActorInterface Function GetSaveData
 
+// Begin Interface USaveActorInterface Function SetActorGUID
+struct SaveActorInterface_eventSetActorGUID_Parms
+{
+	FGuid NewGuid;
+};
+void ISaveActorInterface::SetActorGUID(FGuid const& NewGuid)
+{
+	check(0 && "Do not directly call Event functions in Interfaces. Call Execute_SetActorGUID instead.");
+}
+static FName NAME_USaveActorInterface_SetActorGUID = FName(TEXT("SetActorGUID"));
+void ISaveActorInterface::Execute_SetActorGUID(UObject* O, FGuid const& NewGuid)
+{
+	check(O != NULL);
+	check(O->GetClass()->ImplementsInterface(USaveActorInterface::StaticClass()));
+	SaveActorInterface_eventSetActorGUID_Parms Parms;
+	UFunction* const Func = O->FindFunction(NAME_USaveActorInterface_SetActorGUID);
+	if (Func)
+	{
+		Parms.NewGuid=NewGuid;
+		O->ProcessEvent(Func, &Parms);
+	}
+	else if (auto I = (ISaveActorInterface*)(O->GetNativeInterfaceAddress(USaveActorInterface::StaticClass())))
+	{
+		I->SetActorGUID_Implementation(NewGuid);
+	}
+}
+struct Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Interface/SaveActorInterface.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NewGuid_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_NewGuid;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::NewProp_NewGuid = { "NewGuid", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SaveActorInterface_eventSetActorGUID_Parms, NewGuid), Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NewGuid_MetaData), NewProp_NewGuid_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::NewProp_NewGuid,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USaveActorInterface, nullptr, "SetActorGUID", nullptr, nullptr, Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::PropPointers), sizeof(SaveActorInterface_eventSetActorGUID_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08C20C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::Function_MetaDataParams), Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::Function_MetaDataParams) };
+static_assert(sizeof(SaveActorInterface_eventSetActorGUID_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_USaveActorInterface_SetActorGUID()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USaveActorInterface_SetActorGUID_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ISaveActorInterface::execSetActorGUID)
+{
+	P_GET_STRUCT_REF(FGuid,Z_Param_Out_NewGuid);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetActorGUID_Implementation(Z_Param_Out_NewGuid);
+	P_NATIVE_END;
+}
+// End Interface USaveActorInterface Function SetActorGUID
+
 // Begin Interface USaveActorInterface Function SetComponentSaveData
 struct SaveActorInterface_eventSetComponentSaveData_Parms
 {
@@ -468,6 +534,7 @@ void USaveActorInterface::StaticRegisterNativesUSaveActorInterface()
 		{ "GetActorSaveID", &ISaveActorInterface::execGetActorSaveID },
 		{ "GetComponentSaveData", &ISaveActorInterface::execGetComponentSaveData },
 		{ "GetSaveData", &ISaveActorInterface::execGetSaveData },
+		{ "SetActorGUID", &ISaveActorInterface::execSetActorGUID },
 		{ "SetComponentSaveData", &ISaveActorInterface::execSetComponentSaveData },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -489,6 +556,7 @@ struct Z_Construct_UClass_USaveActorInterface_Statics
 		{ &Z_Construct_UFunction_USaveActorInterface_GetActorSaveID, "GetActorSaveID" }, // 2172819389
 		{ &Z_Construct_UFunction_USaveActorInterface_GetComponentSaveData, "GetComponentSaveData" }, // 585129578
 		{ &Z_Construct_UFunction_USaveActorInterface_GetSaveData, "GetSaveData" }, // 1948906570
+		{ &Z_Construct_UFunction_USaveActorInterface_SetActorGUID, "SetActorGUID" }, // 865962969
 		{ &Z_Construct_UFunction_USaveActorInterface_SetComponentSaveData, "SetComponentSaveData" }, // 3328726718
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -542,10 +610,10 @@ struct Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_
 		{ FSaveActorData::StaticStruct, Z_Construct_UScriptStruct_FSaveActorData_Statics::NewStructOps, TEXT("SaveActorData"), &Z_Registration_Info_UScriptStruct_SaveActorData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSaveActorData), 279375981U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_USaveActorInterface, USaveActorInterface::StaticClass, TEXT("USaveActorInterface"), &Z_Registration_Info_UClass_USaveActorInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USaveActorInterface), 3484272103U) },
+		{ Z_Construct_UClass_USaveActorInterface, USaveActorInterface::StaticClass, TEXT("USaveActorInterface"), &Z_Registration_Info_UClass_USaveActorInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USaveActorInterface), 3057924945U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_1067356838(TEXT("/Script/TheFall"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_4239169221(TEXT("/Script/TheFall"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_Interface_SaveActorInterface_h_Statics::ScriptStructInfo),
 	nullptr, 0);
