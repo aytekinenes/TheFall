@@ -269,6 +269,9 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\TheFall\TheFallGameMode.h"/>
+    <ClCompile Include="..\..\Source\TheFall\Private\Logger.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TheFall\Private\TFUtils.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -290,6 +293,7 @@
     <ClCompile Include="..\..\Source\TheFall\Private\Interface\SaveActorInterface.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClInclude Include="..\..\Source\TheFall\Public\Logger.h"/>
     <ClInclude Include="..\..\Source\TheFall\Public\TFUtils.h"/>
     <ClInclude Include="..\..\Source\TheFall\Public\BaseClass\TFCharacter.h"/>
     <ClInclude Include="..\..\Source\TheFall\Public\BaseClass\TFPlayerCharacter.h"/>

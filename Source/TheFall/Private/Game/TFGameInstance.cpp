@@ -7,6 +7,7 @@
 #include "GameFramework/Character.h"
 #include "EngineUtils.h"
 #include <Serialization/ObjectAndNameAsStringProxyArchive.h>
+#include "Logger.h"
 
 UTFGameInstance::UTFGameInstance()
 {
@@ -78,7 +79,8 @@ void UTFGameInstance::LoadGame()
 {
 	if (UGameplayStatics::DoesSaveGameExist(SaveGameName, 0))
 	{
-		//todo add logging and error message about missing save game
+		Logger::GetInstance()->AddMessage("Load game called with Invalid save name", ERRORLEVEL::EL_WARNING);
+
 		return;
 	}
 
