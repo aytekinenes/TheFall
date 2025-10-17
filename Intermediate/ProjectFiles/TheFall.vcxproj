@@ -290,6 +290,9 @@
     <ClCompile Include="..\..\Source\TheFall\Private\Game\TFSaveGame.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TheFall\Private\Interface\InteractionInterface.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TheFall\Private\Interface\SaveActorInterface.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -300,6 +303,7 @@
     <ClInclude Include="..\..\Source\TheFall\Public\Components\StatlineComponent.h"/>
     <ClInclude Include="..\..\Source\TheFall\Public\Game\TFGameInstance.h"/>
     <ClInclude Include="..\..\Source\TheFall\Public\Game\TFSaveGame.h"/>
+    <ClInclude Include="..\..\Source\TheFall\Public\Interface\InteractionInterface.h"/>
     <ClInclude Include="..\..\Source\TheFall\Public\Interface\SaveActorInterface.h"/>
   </ItemGroup>
   <PropertyGroup>
