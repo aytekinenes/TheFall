@@ -79,7 +79,7 @@ public:
 	{
 		if (Parts.Num() != 3)
 		{
-			// TODO: Log Error
+			//Logger::GetInstance()->AddMessage("FCoreStat::UpdateFromSaveString called with other then 3 parts", ERRORLEVEL::EL_WARNING);
 			return;
 		}
 		Current = FCString::Atof(*Parts[0]);

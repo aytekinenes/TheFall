@@ -9,10 +9,18 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef THEFALL_TFPlayerCharacter_generated_h
 #error "TFPlayerCharacter.generated.h already included, missing '#pragma once' in TFPlayerCharacter.h"
 #endif
 #define THEFALL_TFPlayerCharacter_generated_h
+
+#define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFPlayerCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnInteractionTriggerOverlapEnd); \
+	DECLARE_FUNCTION(execOnInteractionOverlapBegin);
+
 
 #define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFPlayerCharacter_h_22_INCLASS_NO_PURE_DECLS \
 private: \
@@ -39,6 +47,7 @@ public: \
 #define FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFPlayerCharacter_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFPlayerCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFPlayerCharacter_h_22_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Projects_TheFall_TheFall_Source_TheFall_Public_BaseClass_TFPlayerCharacter_h_22_ENHANCED_CONSTRUCTORS \
 private: \

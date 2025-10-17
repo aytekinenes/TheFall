@@ -11,6 +11,25 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Components/SphereComponent.h"
+#include "Interface/InteractionInterface.h"
+
+void ATFPlayerCharacter::TraceForInteraction()
+{
+	FCollisionQueryParams LTParams = FCollisionQueryParams(FName(TEXT("InteractionTrace")), true, this);
+	LTParams.bReturnPhysicalMaterial = false;
+	LTParams.bReturnFaceIndex = false;
+	GetWorld()->DebugDrawTraceTag = TEXT("InteractionTrace");
+	FHitResult LTHit(ForceInit);
+	FVector LTStart = FollowCamera->GetComponentLocation();
+	float SearchLenght = (FollowCamera->GetComponentLocation() - CameraBoom->GetComponentLocation()).Length();
+	SearchLenght += InteractionTraceLenght;
+	FVector LTEnd = (FollowCamera->GetForwardVector() * SearchLenght) + LTStart;
+
+
+	GetWorld()->LineTraceSingleByChannel(LTHit, LTStart, LTEnd, ECC_Visibility, LTParams);
+
+}
 
 void ATFPlayerCharacter::Move(const FInputActionValue& Value)
 {
@@ -95,7 +114,6 @@ void ATFPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 void ATFPlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	//ATFCharacter::BeginPlay();
 	SaveActorID.Invalidate();
 }
 
@@ -121,4 +139,40 @@ ATFPlayerCharacter::ATFPlayerCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); 
 	FollowCamera->bUsePawnControlRotation = false; 
 
+	InteractionTrigger = CreateDefaultSubobject<USphereComponent>(TEXT("Interaction Trigger Volume"));
+	InteractionTrigger->SetupAttachment(RootComponent);
+	InteractionTrigger->SetRelativeScale3D(FVector(10));
+	InteractionTrigger->OnComponentBeginOverlap.AddDynamic(this, &ATFPlayerCharacter::OnInteractionOverlapBegin);
+	InteractionTrigger->OnComponentEndOverlap.AddDynamic(this, &ATFPlayerCharacter::OnInteractionTriggerOverlapEnd);
+
+	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bTickEvenWhenPaused = false;
+}
+
+void ATFPlayerCharacter::Tick(float DeltaTime)
+{
+	if (bEnableRayTrace)
+	{
+		TraceForInteraction();
+	}
+}
+
+void ATFPlayerCharacter::OnInteractionOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OyherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (!OtherActor->Implements<UInteractionInterface>())
+	{
+		return;
+	}
+	InteractableActors.Add(OtherActor);
+	bEnableRayTrace = true;
+}
+
+void ATFPlayerCharacter::OnInteractionTriggerOverlapEnd(UPrimitiveComponent* OverlapComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex)
+{
+	if (!OtherActor->Implements<UInteractionInterface>())
+	{
+		return;
+	}
+	InteractableActors.Remove(OtherActor);
+	bEnableRayTrace = InteractableActors.Num() > 0;
 }

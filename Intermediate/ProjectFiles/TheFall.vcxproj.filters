@@ -53,6 +53,9 @@
     <Filter Include="Source\TheFall\Private">
       <UniqueIdentifier>{9C27BF5A-9312-3ABB-BF9A-27F0152BDF3E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TheFall\Private\Logger.cpp">
+      <Filter>Source\TheFall\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TheFall\Private\TFUtils.cpp">
       <Filter>Source\TheFall\Private</Filter>
     </ClCompile>
@@ -83,12 +86,18 @@
     <Filter Include="Source\TheFall\Private\Interface">
       <UniqueIdentifier>{BB463162-3AF8-3A16-86D4-8CDFC8BEEF98}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TheFall\Private\Interface\InteractionInterface.cpp">
+      <Filter>Source\TheFall\Private\Interface</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TheFall\Private\Interface\SaveActorInterface.cpp">
       <Filter>Source\TheFall\Private\Interface</Filter>
     </ClCompile>
     <Filter Include="Source\TheFall\Public">
       <UniqueIdentifier>{0658A34F-B0F2-3760-ABD1-33225F8A48AB}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\TheFall\Public\Logger.h">
+      <Filter>Source\TheFall\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\TheFall\Public\TFUtils.h">
       <Filter>Source\TheFall\Public</Filter>
     </ClInclude>
@@ -119,6 +128,9 @@
     <Filter Include="Source\TheFall\Public\Interface">
       <UniqueIdentifier>{8F0AAD78-4C5A-3116-9815-A33190FA8E72}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\TheFall\Public\Interface\InteractionInterface.h">
+      <Filter>Source\TheFall\Public\Interface</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\TheFall\Public\Interface\SaveActorInterface.h">
       <Filter>Source\TheFall\Public\Interface</Filter>
     </ClInclude>
